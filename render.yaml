@@ -1,0 +1,20 @@
+services:
+  - type: web
+    name: kanboard
+    env: docker
+    plan: free
+    repo: https://github.com/yourusername/kanboard
+    branch: main
+    dockerContext: .
+    dockerfilePath: Dockerfile
+    envVars:
+      - key: DB_DRIVER
+        value: mysql
+      - key: DB_USERNAME
+        value: your_mysql_user
+      - key: DB_PASSWORD
+        value: your_mysql_password
+      - key: DB_NAME
+        value: your_mysql_database
+      - key: DB_HOSTNAME
+        value: your_db_host
